@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout_add_hotel"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.huji.apps.haji.petugas.AddHotelActivity">
+
+    <RelativeLayout
+        android:id="@+id/ldetHotel"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+        <FrameLayout
+            android:id="@+id/lytMap"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/detailmarker">
+
+            <fragment
+                android:id="@+id/map"
+                android:name="com.google.android.gms.maps.SupportMapFragment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </FrameLayout>
+
+        <LinearLayout
+            android:id="@+id/detailmarker"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:background="@color/white"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="12dp"
+            android:visibility="visible">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="3dp">
+
+                <TextView
+                    android:id="@+id/tvtipemarker"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@+id/tvdmNama"
+                    android:layout_alignLeft="@+id/tvdmNama"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignStart="@+id/tvdmNama"
+                    android:gravity="center"
+                    android:text="Detail Hotel"
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+
+                <ImageButton
+                    android:id="@+id/navimg"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_gravity="right"
+                    android:background="@color/colorPrimary"
+                    android:onClick="Navigator"
+                    android:src="@drawable/ic_near_me_white_24dp" />
+
+                <TextView
+
+                    android:id="@+id/tvdmNama"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/navimg"
+                    android:layout_marginTop="14dp"
+                    android:layout_toRightOf="@+id/iconsmarker"
+                    android:background="#e7e7e7"
+                    android:padding="6dp"
+                    android:text="Android N Loli Petelgeuse Romanee-Conti Desu" />
+
+                <TextView
+                    android:id="@+id/tvdmTelp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tvdmNama"
+                    android:layout_marginTop="4dp"
+                    android:layout_toRightOf="@+id/iconsmarker"
+                    android:background="#e7e7e7"
+                    android:padding="6dp"
+                    android:text="62812345678910" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <!--<Button-->
+                    <!--android:id="@+id/buttonEnterFalsesD"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_weight="1"-->
+                    <!--android:clickable="true"-->
+                    <!--android:focusable="false"-->
+                    <!--android:onClick="DoRemoveHotel"-->
+                    <!--android:text="Hapus"-->
+                    <!--android:theme="@style/MyButtonRed" />-->
+
+                <Button
+                    android:id="@+id/btnMyHotel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tvdmTelp"
+                    android:layout_weight="1"
+                    android:onClick="SetMyHotel"
+                    android:text="Ubah Hotel"
+                    android:theme="@style/MyButtonPrimary" />
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tvHotelSaya"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:text="Hotel Saya"
+        android:textColor="@color/colorPrimary"
+        android:textSize="17sp"
+        android:visibility="gone" />
+
+    <ListView
+        android:id="@+id/listhotelMy"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvHotelSaya"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/tvHotel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/listhotelMy"
+        android:padding="16dp"
+        android:text="Hotel"
+        android:textColor="@color/colorPrimary"
+        android:textSize="17sp"
+        android:visibility="gone" />
+
+    <ListView
+        android:id="@+id/listhotel"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/tvHotel"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/tv_no"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/grey"
+        android:text="Tidak Ada Hotel"
+        android:gravity="center"
+        android:drawableBottom="@drawable/ic_no_hotel"
+        android:textAppearance="@style/TextAppearance.AppCompat.Title"
+        android:layout_centerInParent="true" />
+    <Button
+        android:layout_marginTop="16dp"
+        android:id="@+id/btnAddHotel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/signinrectt"
+        android:onClick="SetMyHotel"
+        android:padding="16dp"
+        android:text="Tambahkan Hotel"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:layout_below="@+id/tv_no"
+        android:layout_centerHorizontal="true" />
+</RelativeLayout>

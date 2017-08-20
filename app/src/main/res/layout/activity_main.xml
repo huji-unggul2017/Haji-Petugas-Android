@@ -1,0 +1,505 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_mains"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/back"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    tools:context="com.huji.apps.haji.petugas.MainActivity">
+
+    <ImageView
+        android:id="@+id/imagelogo"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="48dp"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        android:src="@mipmap/ic_launcher"
+        android:visibility="visible" />
+
+
+    <LinearLayout
+        android:id="@+id/llAwal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/imagelogo"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <Button
+            android:id="@+id/buttonLogin"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:clickable="true"
+            android:focusable="false"
+            android:onClick="ClickLogin"
+            android:text="Login"
+            android:theme="@style/MyButtonPrimary" />
+
+        <Button
+            android:id="@+id/buttonRegister"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:clickable="true"
+            android:focusable="false"
+            android:onClick="ClickRegister"
+            android:text="Register"
+            android:theme="@style/MyButtonPrimary" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/loadingView"
+        android:layout_width="240dp"
+        android:layout_height="120dp"
+        android:layout_centerInParent="true"
+        android:background="#D9ffffff"
+        android:orientation="vertical"
+        android:visibility="gone"
+        android:weightSum="2">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_weight="1"
+            android:background="@color/colorPrimary"
+            android:gravity="center"
+            android:text="Menghubungkan ke server"
+            android:textColor="@color/white"
+            android:textSize="17sp" />
+
+        <com.github.ybq.android.spinkit.SpinKitView xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/spin_kit"
+            style="@style/SpinKitView.Large.Wave"
+            android:layout_width="wrap_content"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:padding="8dp"
+            app:SpinKit_Color="@color/colorPrimary" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/firstlogin"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/imagelogo"
+        android:focusableInTouchMode="true"
+        android:paddingTop="18dp"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="14dp"
+            android:layout_marginTop="48dp"
+            android:background="#444245"
+            android:padding="8dp"
+            android:text="Haji Umroh Jamaah Indonesia"
+            android:textColor="@color/white" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textView2"
+            android:layout_marginLeft="32dp"
+            android:layout_marginRight="32dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/rectfull"
+            android:focusableInTouchMode="true"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Email Label -->
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/usernameWrapper"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="2dp"
+                android:layout_marginTop="2dp"
+                android:windowSoftInputMode="adjustResize">
+
+                <EditText
+                    android:id="@+id/email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Passport"
+                    android:inputType="textCapSentences"
+                    android:textColorHint="#000000"
+                    android:windowSoftInputMode="adjustResize" />
+            </android.support.design.widget.TextInputLayout>
+
+            <!-- Email Label -->
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/kodeWrapper"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="2dp"
+                android:layout_marginTop="2dp"
+                android:visibility="gone"
+                android:windowSoftInputMode="adjustResize">
+
+                <EditText
+                    android:id="@+id/kodeaktifasi"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Kode Aktifasi"
+                    android:inputType="number"
+                    android:maxLength="7"
+                    android:text="9999999"
+                    android:textColorHint="#000000"
+                    android:windowSoftInputMode="adjustResize" />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/pinWrapper"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="2dp"
+                android:layout_marginTop="2dp"
+                android:visibility="gone"
+                android:windowSoftInputMode="adjustResize">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Kode PIN"
+                    android:inputType="numberPassword"
+                    android:maxLength="4"
+                    android:textColorHint="#000000"
+                    android:windowSoftInputMode="adjustResize" />
+            </android.support.design.widget.TextInputLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sudah Aktifasi?" />
+
+                <CheckBox
+                    android:id="@+id/cbdone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/buttonnext1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@color/colorPrimary"
+            android:gravity="center"
+            android:onClick="FirstDo"
+            android:padding="15dp"
+            android:text="MASUK"
+            android:textColor="#ffffff" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/thirdlogin"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/imagelogo"
+        android:focusableInTouchMode="true"
+        android:paddingTop="18dp"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/textViewinput"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="14dp"
+            android:layout_marginTop="48dp"
+            android:background="#444245"
+            android:gravity="center"
+            android:padding="8dp"
+            android:text="Untuk keamanan Akun Anda masukkan 4 digit pin dibawah ini"
+            android:textColor="@color/white" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textViewinput"
+            android:layout_marginLeft="32dp"
+            android:layout_marginRight="32dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/rectfull"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/etPin1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="4dp"
+                android:layout_marginTop="4dp"
+                android:windowSoftInputMode="adjustResize">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="PIN"
+                    android:inputType="numberPassword"
+                    android:maxLength="4"
+                    android:textColorHint="#000000"
+                    android:windowSoftInputMode="adjustResize" />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/etPin2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="4dp"
+                android:layout_marginTop="4dp"
+                android:windowSoftInputMode="adjustResize">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Konfirmasi PIN"
+                    android:inputType="numberPassword"
+                    android:maxLength="4"
+                    android:textColorHint="#000000"
+                    android:windowSoftInputMode="adjustResize" />
+            </android.support.design.widget.TextInputLayout>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/buttonnext3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@color/colorPrimary"
+            android:gravity="center"
+            android:onClick="ThirdDo"
+            android:padding="15dp"
+            android:text="LANJUT"
+            android:textColor="#ffffff" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/fourthlogin"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/buttonnext4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@color/colorPrimary"
+            android:gravity="center"
+            android:onClick="LastDo"
+            android:padding="15dp"
+            android:text="LANJUT"
+            android:textColor="#ffffff" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/buttonnext4">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="32dp"
+                    android:layout_marginLeft="32dp"
+                    android:layout_marginRight="32dp"
+                    android:layout_marginTop="32dp"
+                    android:background="@drawable/rectfull"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:id="@+id/textViewo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginBottom="16dp"
+                        android:gravity="center"
+                        android:padding="8dp"
+                        android:text="Info Profil"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="22sp" />
+
+                    <RelativeLayout
+                        android:layout_width="145dp"
+                        android:layout_height="145dp"
+                        android:layout_gravity="center">
+
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:id="@+id/icons"
+                            android:layout_width="140dp"
+                            android:layout_height="140dp"
+                            android:layout_centerInParent="true"
+                            android:layout_marginBottom="1dp"
+                            android:contentDescription="Thumbnail"
+                            android:src="@drawable/profilee" />
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:id="@+id/iconscam"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_alignParentBottom="true"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginBottom="1dp"
+                            android:contentDescription="Thumbnail"
+                            android:src="@drawable/iccamera" />
+                    </RelativeLayout>
+
+                    <fr.ganfra.materialspinner.MaterialSpinner
+                        android:id="@+id/spintype"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginRight="4dp"
+                        android:layout_marginTop="2dp"
+                        android:layout_weight="1"
+                        app:ms_arrowSize="10dp"
+                        app:ms_enableFloatingLabel="true"
+                        app:ms_floatingLabelColor="@color/black"
+                        app:ms_floatingLabelText="Petugas"
+                        app:ms_hint="Type Petugas"
+                        app:ms_hintColor="@color/black"
+                        app:ms_multiline="false" />
+
+                    <android.support.design.widget.TextInputLayout
+                        android:id="@+id/nameWrapper"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="2dp"
+                        android:layout_marginTop="2dp"
+                        android:windowSoftInputMode="adjustResize">
+
+                        <EditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Nama"
+                            android:inputType="textCapSentences"
+                            android:maxLength="40"
+                            android:textColorHint="#000000"
+                            android:windowSoftInputMode="adjustResize" />
+                    </android.support.design.widget.TextInputLayout>
+
+                    <android.support.design.widget.TextInputLayout
+                        android:id="@+id/emailpWrapper"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="4dp"
+                        android:layout_marginTop="2dp"
+                        android:windowSoftInputMode="adjustResize">
+
+                        <EditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Email"
+                            android:inputType="textEmailAddress"
+                            android:maxLength="100"
+                            android:textColorHint="#000000"
+                            android:windowSoftInputMode="adjustResize" />
+                    </android.support.design.widget.TextInputLayout>
+
+                    <TextView
+                        android:id="@+id/textView_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:paddingLeft="5dp"
+                        android:text="Nomor Telepon"
+                        android:textSize="13sp"
+                        android:visibility="visible" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="4dp"
+                        android:layout_marginTop="4dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:weightSum="2">
+
+                        <com.hbb20.CountryCodePicker
+                            android:id="@+id/ccp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            app:countryPreference="ID"
+                            app:defaultCode="62"
+                            app:hideNameCode="true"
+                            app:textSize="16sp" />
+
+
+                        <EditText
+                            android:id="@+id/editText_phones"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="8123456789"
+                            android:inputType="phone"
+                            android:maxLength="15"
+                            android:singleLine="true"
+                            android:windowSoftInputMode="adjustResize" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/textView_titlejk"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:paddingLeft="5dp"
+                        android:text="Jenis Kelamin"
+                        android:textSize="13sp"
+                        android:visibility="visible" />
+
+                    <RadioGroup
+                        android:id="@+id/radioGroup1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginBottom="4dp"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/radioButton1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="true"
+                            android:text="Laki-Laki" />
+
+
+                        <RadioButton
+                            android:id="@+id/radioButton2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="16dp"
+                            android:text="Perempuan" />
+                    </RadioGroup>
+                </LinearLayout>
+            </RelativeLayout>
+        </ScrollView>
+
+    </RelativeLayout>
+
+</RelativeLayout>

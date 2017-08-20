@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#183665</color>
+    <color name="colorPrimaryDark">#10304e</color>
+    <color name="colorAccent">#b18c68</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="grey">#9E9E9E</color>
+
+    <color name="colorFollow">#4caf50</color>
+    <color name="colorFollowClick">#388E3C</color>
+    <color name="colorText">#ffffff</color>
+    <color name="backgroundbc">#f2f0fb</color>
+</resources>

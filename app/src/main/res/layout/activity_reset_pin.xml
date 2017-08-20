@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_above="@+id/menubar"
+    android:background="@color/white"
+    android:visibility="visible"
+    tools:context="com.huji.apps.haji.petugas.ResetPINActivity">
+
+    <RelativeLayout
+        android:id="@+id/lListEmpty"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:visibility="visible">
+
+        <ImageView
+            android:id="@+id/imgljnot"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/imgljnot"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:text="Tidak ada jemaah"
+            android:textAppearance="@style/TextAppearance.AppCompat.Title"
+            android:textColor="@color/colorPrimary" />
+
+    </RelativeLayout>
+
+    <ListView
+        android:id="@+id/lvLj"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#dcdddf"
+        android:divider="#dcdddf"
+        android:dividerHeight="8dp"
+        android:padding="8dp"
+        android:visibility="gone"/>
+</RelativeLayout>

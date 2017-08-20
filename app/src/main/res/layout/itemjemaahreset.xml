@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?><!--<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"--><!--xmlns:card_view="http://schemas.android.com/apk/res-auto"--><!--android:id="@+id/card_view"--><!--android:layout_width="match_parent"--><!--android:layout_height="wrap_content"--><!--card_view:cardBackgroundColor="#ffffff"--><!--card_view:cardCornerRadius="4dp"--><!--card_view:cardElevation="5dp"--><!--card_view:cardUseCompatPadding="true">-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/rectfullitem"
+    android:orientation="horizontal"
+    android:padding="8dp">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/iconsLj"
+        android:layout_width="52dp"
+        android:layout_height="52dp"
+        android:layout_gravity="center_vertical"
+        android:contentDescription="Thumbnail"
+        android:src="@drawable/profilee" />
+
+    <TextView
+        android:id="@+id/tvNamaLj"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="14dp"
+        android:layout_marginStart="14dp"
+        android:text="Adam Fikri Maulana Simalaka"
+        android:textColor="@color/black"
+        android:textSize="17sp"
+        android:layout_weight="0.5"/>
+
+    <Button
+        android:id="@+id/buttonreset"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:clickable="true"
+        android:focusable="false"
+        android:onClick="BatalPin"
+        android:text="Reset"
+        android:theme="@style/MyButtonRed" />
+</LinearLayout><!--</android.support.v7.widget.CardView>-->

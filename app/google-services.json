@@ -1,0 +1,115 @@
+{
+  "project_info": {
+    "project_number": "880411129639",
+    "firebase_url": "https://huji-haji.firebaseio.com",
+    "project_id": "huji-haji",
+    "storage_bucket": "huji-haji.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:880411129639:android:7bd01615d62b0d9c",
+        "android_client_info": {
+          "package_name": "com.huji.apps.haji"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "880411129639-9sqft7gr0h06idh1bn0nervj5hdo2b09.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.huji.apps.haji",
+            "certificate_hash": "22aab12c8b1edb0f9f4c35eb27259cd0c5a6f576"
+          }
+        },
+        {
+          "client_id": "880411129639-clhsqh5ehd8rgkas3mp85brkb56mtcvm.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.huji.apps.haji",
+            "certificate_hash": "5003884813e377a1f764821c65632e27f9fabfe4"
+          }
+        },
+        {
+          "client_id": "880411129639-qcomttf20cpm1ol0m0r827v4tvj3p2f1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDAU5rzDQqXFaRupgOn3OW_iJc0oCdElG8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "880411129639-qcomttf20cpm1ol0m0r827v4tvj3p2f1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:880411129639:android:4828c3f953fcc8d8",
+        "android_client_info": {
+          "package_name": "com.huji.apps.haji.petugas"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "880411129639-3rsu0iacg5k48srmr3pnr4b8o9gmigl1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.huji.apps.haji.petugas",
+            "certificate_hash": "22aab12c8b1edb0f9f4c35eb27259cd0c5a6f576"
+          }
+        },
+        {
+          "client_id": "880411129639-bc5561moi04uden1tqrt1c0lh7eob2m3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.huji.apps.haji.petugas",
+            "certificate_hash": "5003884813e377a1f764821c65632e27f9fabfe4"
+          }
+        },
+        {
+          "client_id": "880411129639-qcomttf20cpm1ol0m0r827v4tvj3p2f1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDAU5rzDQqXFaRupgOn3OW_iJc0oCdElG8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "880411129639-qcomttf20cpm1ol0m0r827v4tvj3p2f1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
